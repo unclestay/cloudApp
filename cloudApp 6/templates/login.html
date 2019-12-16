@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Sample</title>
+</head>
+<body>
+    <br/>
+    <br/>
+    <br/>
+    <div align="center">
+        <font size="5" style='font-family: "Courier New"'>
+        <h1>
+            <img align=center src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576375659178&di=cb5054bfb2ba243e50588c01d7479700&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F01%2F24%2F56%2F86%2F58fc0c3ee362a.jpg%2521%2Ffwfh%2F512x512%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue" alt="image of movie" width="150" height="150">
+            MovieLens
+        </h1>
+        <p><time pubdate datetime="2019-12-14"></time></p>
+        </font>
+        <br/><br/>
+        <font size="4"  style='font-family: "Courier New"'>
+            <h2>
+                Welcome! Please login
+            </h2>
+        </font>
+    </div>
+    <br/><br/>
+    <br/><br/>
+    <div align="center">
+    {% with messages = get_flashed_messages() %}
+        <div>{{ messages[0] }}</div>
+    {% endwith %}
+    <form action="{{ url_for('login') }}" method="POST">
+        <font size="5" style='font-family: "Courier New"'>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Id:
+        <input type="text" name="userid" id="userid" placeholder="ID" />
+        &nbsp;&nbsp;&nbsp; Password:
+        <input type="password" name="password" id="password" placeholder="password" />
+        <input type="submit" name="submit" value="submit"/>
+        </font>
+    </form>
+    </div>
+</body>
+</html>

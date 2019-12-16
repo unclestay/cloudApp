@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud App</title>
+</head>
+
+
+<body>
+    <div>
+        <font  size="6" style='font-family: "Courier New"'>
+        <h1 align=center>
+            <img align=center src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576375659178&di=cb5054bfb2ba243e50588c01d7479700&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F01%2F24%2F56%2F86%2F58fc0c3ee362a.jpg%2521%2Ffwfh%2F512x512%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue" alt="image of movie" width="200" height="200">
+            MovieLens
+        </h1>
+        <p><time pubdate datetime="2019-12-14"></time></p>
+        </font>
+    </div>
+    <div align=center>
+        <font size="4" style='font-family: "Courier New"'>
+        {% if name %}
+          <h2>Hello {{ name }}! Movie you want to search</h2>
+        {% else %}
+          <h2>Hello! Movie you want search</h2>
+        {% endif %}
+        </font>
+    </div>
+    <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=5>
+    <div>
+    <font size="4" style='font-family: "Courier New"'>
+    {% for i in userRank %}
+    <li align="center" class="movie-list">
+        <div class="movieid">
+            Movie ID : {{i['_id']}}
+        </div>
+        <div class="rating">
+            PAverage rating : {{i['average']}}
+        </div>
+        <div class="sum">
+            Number of reviews : {{i['tot']}}
+        </div>
+    </li>
+    {% endfor %}
+    </font>
+    </div>
+
+
+</body>
+</html>

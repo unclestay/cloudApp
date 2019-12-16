@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyst file</title>
+</head>
+<body>
+    <div>
+        <font size="6" style='font-family: "Courier New"'>
+        <h1>
+            <img align=center src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576375659178&di=cb5054bfb2ba243e50588c01d7479700&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F01%2F24%2F56%2F86%2F58fc0c3ee362a.jpg%2521%2Ffwfh%2F512x512%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue" alt="image of movie" width="150" height="150">
+            MovieLens
+        </h1>
+        <p><time pubdate datetime="2019-12-14"></time></p>
+        </font>
+    </div>
+
+    <font size="3" style='font-family: "Courier New"'>
+    <div>
+        {% for i in shardingStatus %}
+            <div class="shard">
+                <div class="collection">
+                    Database and collection : {{i['_id']}}
+                </div>
+                <div class="shard-key">
+                    shard key : {{i['key']}}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        {% for i in chunkStatus %}
+            <div class="shard">
+                <div class="chunk">
+                    Chunk : {{i['lastmod']}}
+                </div>
+                <div class="collection">
+                    Shard name : {{i['shard']}}
+                </div>
+                <div class="shard-key">
+                    Minkey : {{i['min']['_id']}}
+                </div>
+                <div class="sum">
+                    Maxkey : {{i['max']['_id']}}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </font>
+
+
+</body>
+</html>
+
+</body>
+</html>

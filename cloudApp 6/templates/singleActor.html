@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud App</title>
+</head>
+
+
+<body>
+    <div>
+        <font  size="6" style='font-family: "Courier New"'>
+        <h1 align=center>
+            <img align=center src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576375659178&di=cb5054bfb2ba243e50588c01d7479700&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F01%2F24%2F56%2F86%2F58fc0c3ee362a.jpg%2521%2Ffwfh%2F512x512%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue" alt="image of movie" width="150" height="150">
+            MovieLens
+        </h1>
+        <p><time pubdate datetime="2019-12-14"></time></p>
+        </font>
+    </div>
+    <div align=center>
+        <font size="4" style='font-family: "Courier New"'>
+        {% if name %}
+          <h2>Hello {{ name }}! Movie acted by actor you search</h2>
+        {% else %}
+          <h2>Hello! Movie acted by actor you search</h2>
+        {% endif %}
+        </font>
+    </div>
+    <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=5>
+    <div>
+    <font size="4" style='font-family: "Courier New"'>
+    {% for i in singleActor %}
+    <li align="center" class="movie-list">
+        <div class="movieid">
+            Movie ID : {{i['movieid']}}
+        </div>
+        <div class="year">
+            Production year : {{i['year']}}
+        </div>
+        <div class="english">
+            Is English : {{i['isEnglish']}}
+        </div>
+        <div class="directorid">
+            Directorid : {{i['director'][0]['directorid']}}
+        </div>
+        <div class="directorid">
+            Genre : {{i['director'][0]['genre']}}
+        </div>
+        <div class="directorid">
+            Average Revenue : {{i['director'][0]['avg_revenue']}}
+        </div>
+    </li>
+    {% endfor %}
+    </font>
+    <font size="4" style='font-family: "Courier New"'>
+    <table>
+        <tr>
+            <th>Movie ID</th>
+            <th>Production year</th>
+            <th>Is English</th>
+            <th>Director ID</th>
+            <th>Genre</th>
+            <th>Average Revenue</th>
+        </tr>
+        {% for i in singleActor %}
+        <tr>
+            <th>{{i['movieid']}}</th>
+            <th>{{i['year']}}</th>
+            <th>{{i['isEnglish']}}</th>
+            <th>{{i['director'][0]['directorid']}}</th>
+            <th>{{i['director'][0]['genre']}}</th>
+            <th>{{i['director'][0]['avg_revenue']}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    </font>
+    </div>
+
+
+</body>
+</html>

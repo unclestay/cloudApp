@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div align="center">
+        <font size="5" style='font-family: "Courier New"'>
+        <h1>
+            <img align=center src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576375659178&di=cb5054bfb2ba243e50588c01d7479700&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F01%2F24%2F56%2F86%2F58fc0c3ee362a.jpg%2521%2Ffwfh%2F512x512%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue" alt="image of movie" width="150" height="150">
+            MovieLens
+        </h1>
+        <p><time pubdate datetime="2019-12-14"></time></p>
+        </font>
+    </div>
+    <div>
+        <form method="POST">
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+                {{ form.csrf_token }}
+            <font size="5" style='font-family: "Courier New"'>
+            <h3>
+                Enter what you want to search
+                {{ form.name(size=40) }}&nbsp;&nbsp;
+            </h3>
+            </font>
+            <font size="4" style='font-family: "Courier New"'>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5>
+                <div>
+                Search all information of movies by movie ID
+                </div>
+                <div align="right">
+                {{ form.movie (style="width:100px;height:30px;font-size:19px")}}&nbsp;&nbsp;&nbsp;
+                </div>
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5>
+                Search all information of movies by actor ID
+                <div align="right">
+                {{ form.actor (style="width:100px;height:30px;font-size:19px")}}&nbsp;&nbsp;&nbsp;
+                </div>
+
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5>
+                List English movies by entering "T"
+                <br/>
+                List other language movies by entering "F"
+                <div align="right">
+                {{ form.english (style="width:100px;height:30px;font-size:19px")}}&nbsp;&nbsp;&nbsp;
+                </div>
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5>
+                Get the list of movies based on average rates of all users
+                <br/>
+                Options: "Action", "Adventure", "Animation", "Comedy", "Crime", "Documentary", "Drama", "Horror", "Other"
+                <div align="right">
+                {{ form.rating (style="width:100px;height:30px;font-size:19px")}}&nbsp;&nbsp;&nbsp;
+                </div>
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5>
+                List the movies that a user watched, ranked by average rates of users
+                <div align="right">
+                {{ form.user (style="width:100px;height:30px;font-size:19px")}}&nbsp;&nbsp;&nbsp;
+                </div>
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5 >
+                Check the status of database (login only)
+                {{ form.analyst}}
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5 >
+                Remove a record
+                <div align="right">
+                {{ form.removetext(size=40) }}
+                {{ form.remove (style="width:100px;height:30px;font-size:19px")}}&nbsp;&nbsp;&nbsp;
+                </div>
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5 >
+                Enter the objectId and data to update an existed record
+                <div align="right">
+                {{ form.updateid(size=40) }}
+                {{ form.updatedata(size=40) }}
+                {{ form.update (style="width:100px;height:30px;font-size:19px")}}&nbsp;&nbsp;&nbsp;
+                </div>
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            <h5 align="left">
+                Insert a document (must in a dictionary form)
+                <div align="right">
+                {{ form.inserttext(size=40) }}
+                {{ form.insert (style="width:100px;height:30px;font-size:19px")}}&nbsp;&nbsp;&nbsp;
+                </div>
+            </h5>
+            <HR align=left width=1410 color=#987cb9 SIZE=1>
+            </font>
+        </form>
+    </div>
+
+
+</body>
+</html>
+
+
